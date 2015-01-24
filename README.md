@@ -1,5 +1,7 @@
 # clj-sockets
 
+![Travis build](https://travis-ci.org/atroche/clj-sockets.svg?branch=master)
+
 A Clojure library wrapping Java Sockets. Because you shouldn't have to use interop to do networking.
 
 clj-sockets is synchronous. For asynchronous networking in Clojure, check out [aleph](https://github.com/ztellman/aleph).
