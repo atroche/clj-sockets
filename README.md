@@ -4,7 +4,7 @@
 
 A Clojure library wrapping Java Sockets. Because you shouldn't have to use interop to do networking.
 
-clj-sockets is synchronous. For asynchronous networking in Clojure, check out [aleph](https://github.com/ztellman/aleph).
+clj-sockets is synchronous. For asynchronous networking in Clojure, check out [aleph](https://github.com/ztellman/aleph) or [async-sockets](https://github.com/bguthrie/async-sockets).
 
 This library is fully annotated using [core.typed](https://github.com/clojure/core.typed).
 
