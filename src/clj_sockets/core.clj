@@ -6,7 +6,6 @@
            (java.io BufferedWriter OutputStream InputStream BufferedReader)
            (clojure.lang Seqable)))
 
-(defn request-string [hostname] (format "GET / HTTP/1.1\nHost: %s\n\n" hostname))
 
 (defn create-socket [^String hostname :- String
                      ^Integer port :- Integer] :- Socket
@@ -16,6 +15,9 @@
 (ann ^:no-check clojure.java.io/reader [Socket -> BufferedReader])
 (ann ^:no-check clojure.core/line-seq [BufferedReader -> (Seqable String)])
 
+(defn close-socket [^Socket socket :- Socket] :- nil
+  (.close socket))
+
 (defn write-to-buffer [^BufferedWriter output-stream :- BufferedWriter
                        ^String string :- String] :- nil
   (.write output-stream string)
@@ -24,6 +26,10 @@
 (ann write-to [Socket String -> nil])
 (defn write-to [socket message]
   (write-to-buffer (writer socket) message))
+
+(ann write-line [Socket String -> nil])
+(defn write-line [socket message]
+  (write-to socket (str message "\n")))
 
 ; this is memoize so that we always get the same reader for
 ; a given socket. otherwise the temporary readers could have text
@@ -55,16 +61,6 @@
                                 (.readLine reader))]
     (read-line-from-reader (get-reader socket))))
 
-
-; memoize the call to reader so
-
-;
-;(defn serve [port handler]
-;  (with-open [server-sock (ServerSocket. port)
-;              sock (.accept server-sock)]
-;    (let [msg-in (read-line sock)
-;          msg-out (handler msg-in)]
-;      (write-to sock msg-out))))
 
 (defn create-server [^Integer port :- Integer] :- ServerSocket
   (ServerSocket. port))
