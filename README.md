@@ -6,7 +6,7 @@ A Clojure library wrapping Java Sockets. Because you shouldn't have to use inter
 
 clj-sockets is synchronous. For asynchronous networking in Clojure, check out [aleph](https://github.com/ztellman/aleph).
 
-This library is fully annotated using core.typed.
+This library is fully annotated using [core.typed](https://github.com/clojure/core.typed).
 
 ## Installation
 
