@@ -13,6 +13,7 @@
                           (write-line socket line)
                           (close-socket socket))))
     (let [client (create-socket "localhost" port)]
+      (is (connected? client))
       (write-line client "hello")
       (let [response (read-line client)]
         (is (= "hello" response))
