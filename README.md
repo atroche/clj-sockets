@@ -8,7 +8,7 @@ This library is fully annotated using core.typed.
 
 ## Installation
 
-FIXME
+Just put `[clj-sockets "0.1.0"]` in `:dependencies` in your project.clj.
 
 ## Usage
 
