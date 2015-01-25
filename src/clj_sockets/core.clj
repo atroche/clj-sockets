@@ -27,8 +27,9 @@
   [^String hostname :- String ^Integer port :- Integer] :- Socket
   (Socket. hostname port))
 
-(defn close-socket [^Socket socket :- Socket] :- nil
+(defn close-socket
   "Close the socket, and also closes its input and output streams."
+  [^Socket socket :- Socket] :- nil
   (.close socket))
 
 (defn write-to-buffer
