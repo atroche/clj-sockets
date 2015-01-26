@@ -6,7 +6,12 @@ A Clojure library wrapping Java Sockets. Because you shouldn't have to use inter
 
 clj-sockets is synchronous. For asynchronous networking in Clojure, check out [aleph](https://github.com/ztellman/aleph) or [async-sockets](https://github.com/bguthrie/async-sockets).
 
-This library is fully annotated using [core.typed](https://github.com/clojure/core.typed), and the source code is [extensively documented and turned into beautiful Marginalia pages](http://atroche.github.io/clj-sockets/).
+This library is fully annotated using [core.typed](https://github.com/clojure/core.typed).
+
+## References
+
+*    The source code is [extensively documented and made beautiful by Marginalia](http://atroche.github.io/clj-sockets/)
+*    [API docs](http://atroche.github.io/clj-sockets/doc/clj-sockets.core.html) via Codox
 
 ## Installation
 
