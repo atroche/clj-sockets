@@ -22,7 +22,7 @@ Just put `[clj-sockets "0.1.0"]` in `:dependencies` in your project.clj.
 ### Connecting to a server
 
 ```clojure
-(require '[clj-sockets.core :refer [create-socket write-to close
+(require '[clj-sockets.core :refer [create-socket write-to close-socket
                                     read-line read-lines write-lines])
 
 (def socket (create-socket "google.com" 80))
@@ -40,7 +40,7 @@ socket
 (read-lines socket)
 => ("Cache-Control: private" "Content-Type: text/html; charset=UTF-8" etc.)
 
-(close socket)
+(close-socket socket)
 => nil
 ```
 
@@ -62,7 +62,7 @@ server
 (write-line server "hello there, person using telnet!")
 => nil
 
-(close server)
+(close-socket server)
 => nil
 ```
 
