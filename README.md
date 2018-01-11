@@ -23,7 +23,7 @@ Just put `[clj-sockets "0.1.0"]` in `:dependencies` in your project.clj.
 
 ```clojure
 (require '[clj-sockets.core :refer [create-socket write-to close-socket
-                                    read-line read-lines write-lines])
+                                    read-line read-lines write-lines]])
 
 (def socket (create-socket "google.com" 80))
 => #'clj-sockets.core/socket
